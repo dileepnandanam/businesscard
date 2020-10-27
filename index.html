@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="jquery.js"></script>
+<script src="imagesloaded.js"></script>
+<script src="fittext.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var arts = $('.art img')
+        var iterate = function(i) {
+            $(arts[(i)%(arts.length)]).fadeOut(1000)
+            $(arts[(i+1)%(arts.length)]).fadeIn(1000)
+            setTimeout(function(){iterate(i+1)}, 3000)
+        }
+        
+        $('.name').fitText()
+        $('.skills').fitText(1.4)
+
+        $('.banner').imagesLoaded(function() {
+            $('.overlay').fadeOut(1000)
+            $('.overlay').css('background-color', '#00000042')
+            $('.overlay').fadeIn(1000)
+            iterate(0)
+        })
+    })
+
+
+</script>
+
+<style type="text/css">
+    html, body {
+        margin: 0px;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .art img {
+        width: 100%;
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        display: none;
+    }
+    .overlay {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        
+        background-color: black;
+    }
+    .details {
+        position: absolute;
+        width: 86%;
+        left: 8%;
+        top: 30px;
+        color: white;
+        text-align: center;
+    }
+    .details .name {
+        width: 100%;
+    }
+    .details .skills {
+        width: 100%;
+    }
+    .banner {
+        padding-top: 60%;
+        overflow: hidden;
+        position: relative;
+    }
+     
+    .links {
+        padding: 12px;
+        float: left
+    }
+    .links a img {
+        border-radius: 50%;
+        width: 100px;
+    }
+    .motive {
+        font-size: 30px;
+        padding: 30px;
+        display: inline;
+    }
+    .motive .big {
+        font-size: 50px;
+    }
+
+
+
+</style>
+
+</head>
+<body>
+    <div class="banner">
+        <div class='art'>
+            <img src="1.png"/>
+        </div>
+        <div class='art'>
+            <img src="2.png"/>
+        </div>
+        <div class='art'>
+            <img src="3.png"/>
+        </div>
+        <div class='art'>
+            <img src="4.png"/>
+        </div>
+
+        <div class="overlay">
+            
+
+        </div>
+
+        <div class="details">
+            <h1 class="name">
+                DILEEP NANDANAM
+            </h1>
+            <h2 class="skills">
+                ROR Web developer
+            </h2>
+        </div>
+    </div>
+    <div class="links">
+        <div class="holder">
+            <a href="mailto:dileepsnandanam@gmail.com">
+                <img src="gmail.png" />
+            </a>
+        </div>
+        <div class="holder">
+            <a href="https://github.com/dileepnandanam">
+                <img src="github.webp" />
+            </a>
+        </div>
+        <div class="holder">
+            <a href="https://stackoverflow.com/users/1547872/dileep-nandanam">
+                <img src="stack.png" />
+            </a>
+        </div>
+
+    </div>
+    <div class="motive">
+        <span class="big">"</span>Make userfriendly software 
+    </div>
+</body>
+</html>
