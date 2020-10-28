@@ -34,6 +34,10 @@
         height: 100%;
         width: 100%;
     }
+    body {
+        overflow: auto;
+        background: blueviolet;
+    }
     
     .art img {
         width: 100%;
@@ -75,17 +79,32 @@
     }
      
     .links {
+        margin-top: 16px;
+        margin-bottom: 16px;
         padding: 12px;
         float: left
+        width: 100%;
+        overflow: auto;
     }
-    .links a img {
-        border-radius: 50%;
+    .holder {
+        width: 33.3%;
+        display: inline-block;
+        float: left;
+    }
+    .holder a {
+        width: 100%;
+        display: block;
+    }
+    .holder a img {
         width: 100px;
+        margin: auto;
+        display: block;
+        border-radius: 50%;
     }
     .motive {
         font-size: 30px;
+        text-align: center;
         padding: 30px;
-        display: inline;
     }
     .motive .big {
         font-size: 50px;
@@ -144,7 +163,9 @@
 
     </div>
     <div class="motive">
-        <span class="big">"</span>Make userfriendly software 
+        <div class="motive-inner">
+            "Make userfriendly software
+        </div> 
     </div>
 </body>
 </html>
