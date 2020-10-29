@@ -11,7 +11,7 @@
         var iterate = function(i) {
             $(arts[(i)%(arts.length)]).fadeOut(1000)
             $(arts[(i+1)%(arts.length)]).fadeIn(1000)
-            setTimeout(function(){iterate(i+1)}, 3000)
+            setTimeout(function(){iterate(i+1)}, 2000)
         }
         
         $('.name').fitText()
@@ -97,7 +97,7 @@
         display: block;
     }
     .holder a img {
-        width: 100px;
+        width: 80px;
         margin: auto;
         display: block;
         border-radius: 50%;
@@ -167,6 +167,10 @@
         <div class="motive-inner">
             "Make userfriendly software
         </div> 
+    </div>
+
+    <div class="post">
+        
     </div>
 </body>
 </html>
